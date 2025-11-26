@@ -1,0 +1,78 @@
+package projectgit;
+
+
+	import java.util.Scanner;
+	import java.util.Random;
+
+	public class RockPaperScissors {
+	    public static void main(String[] args) {
+
+	        Scanner sc = new Scanner(System.in);
+	        Random random = new Random();
+
+	        System.out.println("=== Rock Paper Scissors ===");
+	        System.out.println("Type rock, paper or scissors");
+	        System.out.println("Type quit to exit the game");
+
+	        while (true) {
+
+	            System.out.print("\nYour move: ");
+	            String userMove = sc.nextLine().toLowerCase();
+
+	            // quit option
+	            if (userMove.equals("quit")) {
+	                System.out.println("Game ended. Goodbye!");
+	                break;
+	            }
+
+	            // check valid input
+	            if (!userMove.equals("rock") && 
+	                !userMove.equals("paper") &&
+	                !userMove.equals("scissors")) {
+
+	                System.out.println("Invalid input! Please type rock, paper or scissors.");
+	                continue;
+	            }
+
+	            // computer random move
+	            String computerMove = "";
+	            int randomNum = random.nextInt(3); // 0,1,2
+
+	            if (randomNum == 0) computerMove = "rock";
+	            if (randomNum == 1) computerMove = "paper";
+	            if (randomNum == 2) computerMove = "scissors";
+
+	            System.out.println("Computer chose: " + computerMove);
+
+	            // decide winner
+	            if (userMove.equals(computerMove)) {
+	                System.out.println("It's a tie!");
+	            }
+	            else if (userMove.equals("rock")) {
+	                if (computerMove.equals("scissors")) {
+	                    System.out.println("You win!");
+	                } else {
+	                    System.out.println("Computer wins!");
+	                }
+	            }
+	            else if (userMove.equals("paper")) {
+	                if (computerMove.equals("rock")) {
+	                    System.out.println("You win!");
+	                } else {
+	                    System.out.println("Computer wins!");
+	                }
+	            }
+	            else if (userMove.equals("scissors")) {
+	                if (computerMove.equals("paper")) {
+	                    System.out.println("You win!");
+	                } else {
+	                    System.out.println("Computer wins!");
+	                }
+	            }
+	        }
+
+	        sc.close();
+	    }
+	}
+
+
