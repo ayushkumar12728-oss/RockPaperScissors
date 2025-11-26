@@ -19,13 +19,13 @@ package projectgit;
 	            System.out.print("\nYour move: ");
 	            String userMove = sc.nextLine().toLowerCase();
 
-	            // quit option
+	          
 	            if (userMove.equals("quit")) {
 	                System.out.println("Game ended. Goodbye!");
 	                break;
 	            }
 
-	            // check valid input
+	            
 	            if (!userMove.equals("rock") && 
 	                !userMove.equals("paper") &&
 	                !userMove.equals("scissors")) {
@@ -34,7 +34,7 @@ package projectgit;
 	                continue;
 	            }
 
-	            // computer random move
+	         
 	            String computerMove = "";
 	            int randomNum = random.nextInt(3); // 0,1,2
 
@@ -44,7 +44,7 @@ package projectgit;
 
 	            System.out.println("Computer chose: " + computerMove);
 
-	            // decide winner
+	            
 	            if (userMove.equals(computerMove)) {
 	                System.out.println("It's a tie!");
 	            }
@@ -74,5 +74,8 @@ package projectgit;
 	        sc.close();
 	    }
 	}
+
+
+
 
 
